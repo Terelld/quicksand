@@ -1,1 +1,87 @@
 
+* {
+    /* height & width now includes border & padding */
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+  }
+
+    /* I am creating borders/background colors aruund 
+  my div elemets to help me visualize laout */
+.title {
+    grid-area: title;
+    
+}
+.description {
+    grid-area: description;
+}
+
+.reminder {
+    grid-area: reminder;
+    height: 100%
+    
+}
+
+.man {
+    grid-area: man;
+    height: 100%;
+    border: 3px solid black;
+    overflow: hidden;   
+}
+
+.image {
+    display: flex;
+    height: 75%;
+    justify-content: center;
+    
+}
+
+
+.word {
+    grid-area: word;
+}
+ 
+.startbutton {
+  grid-area: startbutton;
+  padding: 5px;
+  font-size: 31px;
+  height: 230px;
+  width: 230px;
+  box-shadow: 0 2px 4px darkslategray;
+  background-color: aqua;
+  border-radius: 100%;
+  margin-left: 25%;
+
+
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100px 50px 500px .5fr; 
+    grid-template-areas:
+    ". title title ." 
+    ". description description ."
+    "reminder man man startbutton"
+    ". word word .";
+    align-items: center;
+    justify-content: center;
+    text-justify: center;
+    text-align: center;
+}
+
+
+
+
+  .flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* creating a class that will center content repsetively */
+
+

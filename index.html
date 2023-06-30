@@ -4,32 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quicksand</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <style defer href="style.css" rel="stylesheet" type="text/css" ></style> -->
 </head>
 <body>
       <!-- I'll create a section that lays out of game area here -->
-    <div class ="gameboard">
-        <h1>Quicksand</h1>
-        <h3>The Ultimate Guessing Game</h3>
+    
+    <h1 class = "title">Quicksand</h1>
+        <h3 class = "description">The Ultimate Guessing Game</h3>
+    
         <!-- the following are 4 cropped photos that will change based on user input in order = a 
         total of 4 tries before game over, the goal is to align each image so that it is at the 
-         assigned grid, giving the appearance of the man sinking-->
-        <div class="man" id="fullbody"> 1 of 4
-            <img>
-        </div> 
+         assigned grid, giving the appearance of the man sinking -->
+    <div class ="gameboard"></div>
         
-        <div class="man" id="threequarters"> 2 of 4
-            <img>
-        </div>
-            
-        <div class="man" id="halfbody"> 3 of 4
-            <img>
-        </div>
-        
-        <div class="man" id="head"> 4 of 5
-            <img>
-        </div>
-      <!-- I'll create a section for player message boxes (remaining chances, buttons, letters used) -->
-      <button>Play/Restart</button>
+    <div class="man">
+        <div class = "image"><img src="https://howtodrawforkids.com/wp-content/uploads/2022/12/7-stickman-drawing-tutorial.jpg" alt="""""> </div>
     </div>
+    <div class="word">Empty Text Spaces</div>
+    <div class="reminder"> Letter's Used box </div> 
+    
+    <button class = "startbutton">Play/Restart</button>  
 </body>
 </html>
