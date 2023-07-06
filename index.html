@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quicksand</title>
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <!-- <style defer href="style.css" rel="stylesheet" type="text/css" ></style> -->
 </head>
 <body>
@@ -21,8 +25,14 @@
     <div class="man">
         <div class = "image"><img src="https://howtodrawforkids.com/wp-content/uploads/2022/12/7-stickman-drawing-tutorial.jpg" alt="""""> </div>
     </div>
-    <div class="word">Empty Text Spaces</div>
-    <div class="reminder"> Letter's Used box </div> 
+    <!-- <div class="word" type="text">Empty Text Spaces</div> -->
+    <div class = "wordspace" id = "wordspace"></div>
+    <!-- <label class = "label">Enter a letter of your choice!</label> -->
+    <div class = "submissions" >
+        <input class = "guess" type="text" id="letterbox" name="letterbox" maxlength="1">
+        <button class = "guess" id="submitguess" type="submit">Submit my guess!</button>
+    </div>
+    <div id = "reminder" class="reminder"> Letters Used box </div> 
     
     <button class = "startbutton">Play/Restart</button>  
 </body>
