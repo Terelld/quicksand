@@ -12,29 +12,34 @@
     <!-- <style defer href="style.css" rel="stylesheet" type="text/css" ></style> -->
 </head>
 <body>
+    <div class = "wrapper">
       <!-- I'll create a section that lays out of game area here -->
     
-    <h1 class = "title">Quicksand</h1>
+        <h1 class = "title">Quicksand</h1>
         <h3 class = "description">The Ultimate Guessing Game</h3>
     
         <!-- the following are 4 cropped photos that will change based on user input in order = a 
         total of 4 tries before game over, the goal is to align each image so that it is at the 
          assigned grid, giving the appearance of the man sinking -->
-    <div class ="gameboard"></div>
+        <div class ="gameboard">
         
-    <div class="man">
-        <div class = "image"><img src="https://howtodrawforkids.com/wp-content/uploads/2022/12/7-stickman-drawing-tutorial.jpg" alt="""""> </div>
+            <!-- <div class="man">Picture Here -->
+                <!-- <div class = "image"><img src="https://howtodrawforkids.com/wp-content/uploads/2022/12/7-stickman-drawing-tutorial.jpg" alt=""> </div> -->
+            <!-- </div> -->
+            <!-- <div class="word" type="text">Empty Text Spaces</div> -->
+            <div class = "wordspace" id = "wordspace"></div>
+            <!-- <label class = "label">Enter a letter of your choice!</label> -->
+            <!-- <div class="inputs"></div> -->
+            <input id = "letterbox" type="text" class="user-guess" maxlength="1">
+            <div class = "submissions"></div>
+            
+            <p id = "remaining-guess" class= "remaining-guess"> 
+                Guesses Left: <span>8</span></p>
+            <p id = "reminder" class= "reminder"> 
+                Letters Used: <span></span></p>
+            
+            <button class = "startbutton" id = "startbutton">Play/Restart</button>  
+        </div>
     </div>
-    <!-- <div class="word" type="text">Empty Text Spaces</div> -->
-    <div class = "wordspace" id = "wordspace"></div>
-    <!-- <label class = "label">Enter a letter of your choice!</label> -->
-    <div class = "submissions" >
-        <input class = "guess" type="text" id="letterbox" name="letterbox" maxlength="1">
-        <p> Enter your letter and then press ENTER</p>
-        <!-- <<button class = "guess" id="submitguess" type="submit">Submit my guess!</button>> -->
-    </div>
-    <div id = "reminder" class="reminder"> Letters Used box </div> 
-    
-    <button class = "startbutton">Play/Restart</button>  
 </body>
 </html>
