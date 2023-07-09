@@ -9,11 +9,12 @@ let letterbox = document.getElementById("letterbox");
 
 
 let wordList = ["leaf", "jungle", "tiger", "swamp", "alligator", "elephant", "waterfall"];
-let maxGuesses; 
-let chancesLeft;
+let guesses; 
+//let chancesLeft;
 let incorrectLetters = []; 
 let correctLetters = [];
 let wrongLetter = document.querySelector(".reminder span");
+let chancesLeft = document.querySelector(".chancesleft span");
 
 const submissions = document.querySelector(".submissions");
 let word;
@@ -21,9 +22,9 @@ let word;
 function randomWord() {
     let newWord = wordList[Math.floor(Math.random() * wordList.length)];
     word = newWord;
-    maxGuesses = word.length;
+    guesses = word.length;
     correctLetters = []; incorrectLetters = [];
-    //chancesLeft.innerText = maxGuesses;
+    chancesLeft.innerText = guesses;
     wrongLetter.innerText = incorrectLetters;
     console.log(newWord);
 
@@ -56,11 +57,12 @@ function startGame(e) {
     } else {
         
         //incorrectLetters.push(' ${letter}')
-       incorrectLetters.push(` ${letter}`)
+        guesses--; //this subracts a guess each time.
+        incorrectLetters.push(` ${letter}`)
         console.log("not a match");  
     }
     wrongLetter.innerText = incorrectLetters;
-  
+    chancesLeft.innerText = guesses;
 }
 
 
