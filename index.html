@@ -1,54 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quicksand</title>
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
-    <!-- <style defer href="style.css" rel="stylesheet" type="text/css" ></style> -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quicksand</title>
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     
-</head>
-<body>
     
-    <div class = "wrapper">
-      <!-- I'll create a section that lays out of game area here -->
-    
-        <h1 class = "title">Quicksand</h1>
-        <h3 class = "description">The Ultimate Guessing Game</h3>
-    
-        <!-- the following are 4 cropped photos that will change based on user input in order = a 
-        total of 4 tries before game over, the goal is to align each image so that it is at the 
-         assigned grid, giving the appearance of the man sinking -->
-        <div class ="gameboard">
-            <div class= "messageboard">
-                <p class="messages"> <span></span></p>
+    </head>
+    <body>
+        
+        <div class = "wrapper">
+        
+            <h1 class = "title">Quicksand</h1>
+            <h3 class = "description">The Ultimate Guessing Game</h3>
+            <div class ="gameboard">
+                <div class= "messageboard">
+                    <p class="messages"> <span></span></p>
+                </div>
+                <div class = "wordspace" id = "wordspace"></div>
+                <input id = "letterbox" type="text" class="user-guess" maxlength="1">
+                <div class = "submissions"></div>
+                <div class = "info">
+                    <p id = "chancesleft" class= "chancesleft"> 
+                    Guesses Left: <span></span></p>
+                    <p id = "reminder" class = "reminder"> 
+                    Letters Used: <span></span></p>
+                </div>
+                <div class ="info2">
+                    <p id = "reminder" class= "reminder"> 
+                    Letters Used: <span></span></p> 
+                </div>    
+                
+                <button class = "startbutton" id = "startbutton">Play/Restart</button>  
             </div>
-            <!-- <div class="man">Picture Here -->
-                <!-- <div class = "image"><img src="https://howtodrawforkids.com/wp-content/uploads/2022/12/7-stickman-drawing-tutorial.jpg" alt=""> </div> -->
-            <!-- </div> -->
-            <!-- <div class="word" type="text">Empty Text Spaces</div> -->
-            <div class = "wordspace" id = "wordspace"></div>
-            <!-- <label class = "label">Enter a letter of your choice!</label> -->
-            <!-- <div class="inputs"></div> -->
-            <input id = "letterbox" type="text" class="user-guess" maxlength="1">
-            <div class = "submissions"></div>
-            <div class = "info">
-                <p id = "chancesleft" class= "chancesleft"> 
-                Guesses Left: <span></span></p>
-                <p id = "reminder" class = "reminder"> 
-                Letters Used: <span></span></p>
-            </div>
-            <div class ="info2">
-                <p id = "reminder" class= "reminder"> 
-                Letters Used: <span></span></p> 
-            </div>    
-            
-            <button class = "startbutton" id = "startbutton">Play/Restart</button>  
         </div>
-    </div>
-</body>
+    </body>
 </html>

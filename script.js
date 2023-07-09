@@ -1,17 +1,11 @@
-//I need variables for the important HTML elements.
-//const playerChoice = document.getElementById('letterbox');
+
 
 
 const startButton = document.querySelector(".startbutton");
 const userGuess = document.querySelector(".user-guess");
 
-//let letterbox = document.getElementById("letterbox");
-
-
-
 let wordList = ["leaf", "jungle", "tiger", "swamp", "alligator", "elephant", "waterfall"];
 let guesses; 
-//let chancesLeft;
 let incorrectLetters = []; 
 let correctLetters = [];
 let wrongLetter = document.querySelector(".reminder span");
@@ -20,6 +14,9 @@ let messageboard = document.querySelector(".messageboard span");
 
 const submissions = document.querySelector(".submissions");
 let word;
+
+startButton.addEventListener("click", randomWord);
+document.addEventListener("keydown", () => userGuess.focus());
 
 function randomWord() {
      let newWord = wordList[Math.floor(Math.random() * wordList.length)];
@@ -41,9 +38,6 @@ function randomWord() {
 }
 randomWord();
 
-
-//let wrongLetters = [];
-//let wrongLetter = document.querySelector(".reminder span");
 
 document.addEventListener("keydown", () => userGuess);
 
@@ -69,23 +63,22 @@ function startGame(e) {
         wrongLetter.innerText = incorrectLetters;
         chancesLeft.innerText = guesses;
         userGuess.value = "";
-        //submissions = word;
     
         if(guesses < 1) {
         messageboard.innerHTML = (`You lost. The word was ${word}!`);
+        document.getElementById("letterbox").disabled = true;
            
         } else if(correctLetters.length === word.length && guesses >= 0) {
             messageboard.innerHTML = "You won!!!!";
             document.getElementById("letterbox").disabled = true;
-        }
-        
-        
     }
+        
+        
+}
     
 
 
 
-startButton.addEventListener("click", randomWord);
 
 
 
@@ -93,6 +86,5 @@ startButton.addEventListener("click", randomWord);
 
 
 
-// userGuess.addEventListener("input", startGame);
-// submissions.addEventListener("keydown", () => userGuess.focus());
-// document.addEventListener("keydown", () => userGuess.focus());
+
+
