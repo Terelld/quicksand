@@ -4,7 +4,8 @@
 
 const startButton = document.querySelector(".startbutton");
 const userGuess = document.querySelector(".user-guess");
-let letterbox = document.getElementById("letterbox");
+
+//let letterbox = document.getElementById("letterbox");
 
 
 
@@ -15,24 +16,27 @@ let incorrectLetters = [];
 let correctLetters = [];
 let wrongLetter = document.querySelector(".reminder span");
 let chancesLeft = document.querySelector(".chancesleft span");
+let messageboard = document.querySelector(".messageboard span");
 
 const submissions = document.querySelector(".submissions");
 let word;
 
 function randomWord() {
-    let newWord = wordList[Math.floor(Math.random() * wordList.length)];
-    word = newWord;
-    guesses = word.length;
-    correctLetters = []; incorrectLetters = [];
-    chancesLeft.innerText = guesses;
-    wrongLetter.innerText = incorrectLetters;
-    console.log(newWord);
+     let newWord = wordList[Math.floor(Math.random() * wordList.length)];
+        word = newWord;
+        guesses = word.length; //number of quesses will equal number of letters.
+        correctLetters = []; incorrectLetters = [];
+        chancesLeft.innerText = guesses;
+        wrongLetter.innerText = incorrectLetters;
+        messageboard.innerText = "Make a guess!"; 
+        console.log(newWord);
 
-    let html = "";
-    for (let i=0; i < word.length; i++) {
-        html += `<input type="text" disabled>`;
+        let html = "";
+        for (let i=0; i < word.length; i++) {
+            html += `<input type="text" disabled>`;
     }
     submissions.innerHTML = html;
+    
 }
 randomWord();
 
@@ -50,21 +54,52 @@ function startGame(e) {
     if (word.includes(letter)) { 
         for (let i = 0; i < word.length;  i++) {
             if(word[i] === letter) {
+                correctLetters += letter;
                 submissions.querySelectorAll("input")[i].value = letter;
             }
         }
-        console.log("It is a match!") 
-    } else {
+        messageboard.innerHTML = "Nice job, keep going!"; 
+        } else {
         
-        //incorrectLetters.push(' ${letter}')
         guesses--; //this subracts a guess each time.
-        incorrectLetters.push(` ${letter}`)
-        console.log("not a match");  
+        incorrectLetters.push(` ${letter}`);
+        messageboard.innerHTML = "Sorry, that is not a match"; 
+        }
+        wrongLetter.innerText = incorrectLetters;
+        chancesLeft.innerText = guesses;
+        userGuess.value = "";
+        //submissions = word;
+    
+        if(guesses < 1) {
+        messageboard.innerHTML = "You lost. Try again!";
+           
+        } else if(correctLetters.length === word.length) {
+            messageboard.innerHTML = "You won!!!!";
+            randomWord();
+        }
+        
+        //we need to get game to restart...check tic tac toe .tutorial
+ 
     }
-    wrongLetter.innerText = incorrectLetters;
-    chancesLeft.innerText = guesses;
-}
+    
 
+
+// function getWinnner() {
+//     if(guesses < 1) {
+//         messageboard.innerHTML = "You lost. Try again!";
+// }
+// }
+// getWinnner();
 
 
 startButton.addEventListener("click", randomWord);
+
+
+
+
+
+
+
+// userGuess.addEventListener("input", startGame);
+// submissions.addEventListener("keydown", () => userGuess.focus());
+// document.addEventListener("keydown", () => userGuess.focus());

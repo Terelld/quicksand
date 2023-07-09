@@ -105,10 +105,13 @@ body {
        
 }
 
-
+/* I made this invisible until I can figure out how 
+remove it wihtout affecting the other letters used feidl. */
 .info2 {
   opacity: 0;
 }
 
 
- 
+ .messages {
+  font-size: 50px;
+ }
