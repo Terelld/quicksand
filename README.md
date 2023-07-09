@@ -5,8 +5,8 @@ This is a guessing game. Player is given a limeted number of guesses based on th
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+<img src="https://imgur.com/VImnjaF">
+<img src="https://imgur.com/3woIebL">
 
 # Technologies Used
 
@@ -16,9 +16,10 @@ This is a guessing game. Player is given a limeted number of guesses based on th
 
 # Getting Started
 
-[Click to Play Connect Four!](your deployment url here)
+[Click to Play Quicksand!](yhttps://terelld.github.io/quicksand/)
 
 # Next Steps
 
 - Future enhancement one - restrict player from entering wrong letter more than once.
 - Future enhancement two - render images based on number of remianing chances.
+- Expand wordlist array to include Hints that are displayed in HTML.
