@@ -16,7 +16,7 @@ This is a guessing game. Player is given a limeted number of guesses based on th
 
 # Getting Started
 
-[Click to Play Quicksand!](yhttps://terelld.github.io/quicksand/)
+[Click to Play Quicksand!](https://terelld.github.io/quicksand/)
 
 # Next Steps
 
