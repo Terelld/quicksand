@@ -29,6 +29,7 @@ function randomWord() {
         chancesLeft.innerText = guesses;
         wrongLetter.innerText = incorrectLetters;
         messageboard.innerText = "Make a guess!"; 
+        document.getElementById("letterbox").disabled = false;
         console.log(newWord);
 
         let html = "";
@@ -71,25 +72,17 @@ function startGame(e) {
         //submissions = word;
     
         if(guesses < 1) {
-        messageboard.innerHTML = "You lost. Try again!";
+        messageboard.innerHTML = (`You lost. The word was ${word}!`);
            
-        } else if(correctLetters.length === word.length) {
+        } else if(correctLetters.length === word.length && guesses >= 0) {
             messageboard.innerHTML = "You won!!!!";
-            randomWord();
+            document.getElementById("letterbox").disabled = true;
         }
         
-        //we need to get game to restart...check tic tac toe .tutorial
- 
+        
     }
     
 
-
-// function getWinnner() {
-//     if(guesses < 1) {
-//         messageboard.innerHTML = "You lost. Try again!";
-// }
-// }
-// getWinnner();
 
 
 startButton.addEventListener("click", randomWord);
