@@ -13,7 +13,7 @@ let maxGuesses;
 let chancesLeft;
 let incorrectLetters = []; 
 let correctLetters = [];
-
+let wrongLetter = document.querySelector(".reminder span");
 
 const submissions = document.querySelector(".submissions");
 let word;
@@ -24,7 +24,7 @@ function randomWord() {
     maxGuesses = word.length;
     correctLetters = []; incorrectLetters = [];
     //chancesLeft.innerText = maxGuesses;
-    reminder.innerText = incorrectLetters;
+    wrongLetter.innerText = incorrectLetters;
     console.log(newWord);
 
     let html = "";
@@ -36,8 +36,8 @@ function randomWord() {
 randomWord();
 
 
-let wrongLetters = [];
-wrongLetters = document.querySelector(".reminder span");
+//let wrongLetters = [];
+//let wrongLetter = document.querySelector(".reminder span");
 
 document.addEventListener("keydown", () => userGuess);
 
@@ -54,11 +54,13 @@ function startGame(e) {
         }
         console.log("It is a match!") 
     } else {
-        wrongLetters.push(letter); 
-        console.log("not a match")  
+        
+        //incorrectLetters.push(' ${letter}')
+       incorrectLetters.push(` ${letter}`)
+        console.log("not a match");  
     }
-    reminder.innerText = wrongLetters;
-  //userGuess.value = "";  //i'm going to make this invisible!!
+    wrongLetter.innerText = incorrectLetters;
+  
 }
 
 
